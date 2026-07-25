@@ -6,17 +6,16 @@ module.exports = {
     extend: {
       colors: {
         primary: '#3F3733',
-        secondary: '#7F756D',
+        secondary: '#6B6558',
         light: {
-          100: '#EEE9E1',
-          200: '#E2DAD1',
+          100: '#F8F6F3',
+          200: '#DED5CC',
         },
         dark: {
-          100: '#656565',
-          200: '#111111',
+          100: '#111111',
         },
         background: '#F8F6F3',
-        accent: '#B06A72',
+        accent: '#8D5852',
       }
     },
   },
