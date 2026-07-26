@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./app/**/*.{js,ts,jsx,tsx}"],
+  content: ["./app/**/*.{js,ts,jsx,tsx}", './components/**/*.{js,jsx,ts,tsx}'],
   presets: [require("nativewind/preset")],
   theme: {
     extend: {
@@ -16,6 +16,14 @@ module.exports = {
         },
         background: '#F8F6F3',
         accent: '#8D5852',
+      },
+
+      fontFamily: {
+        'newyork': ['NewYorkSmall-Regular'],
+        'newyork-semi': ['NewYorkSmall-Semibold'],
+        'sf-pro': ['SF-Pro-Text-Regular'],
+        'sf-pro-medium': ['SF-Pro-Text-Medium'],
+        'sf-pro-semi': ['SF-Pro-Text-Semibold'],
       }
     },
   },

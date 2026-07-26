@@ -14,14 +14,14 @@ export const icons = {
 
     edit: require('../assets/icons/edit.png'),
     quotation: require('../assets/icons/quotation.png'),
-    my_page: require('../assets/icons/my_page.png'),
+    my_page: require('../assets/icons/my-page.png'),
 
     note: require('../assets/icons/note.png'),
     options: require('../assets/icons/options.png'),
 
-    heart_empty: require('../assets/icons/heart_empty.png'),
-    heart_filled: require('../assets/icons/heart_filled.png'),
-    star_empty: require('../assets/icons/star_empty.png'),
-    star_filled: require('../assets/icons/star_filled.png'),
+    heart_empty: require('../assets/icons/heart-empty.png'),
+    heart_filled: require('../assets/icons/heart-filled.png'),
+    star_empty: require('../assets/icons/star-empty.png'),
+    star_filled: require('../assets/icons/star-filled.png'),
 
 }
