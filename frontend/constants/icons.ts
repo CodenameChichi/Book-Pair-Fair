@@ -2,6 +2,7 @@ export const icons = {
     add: require('../assets/icons/add.png'),
 
     back: require('../assets/icons/go-back.png'),
+    arrow_left: require('../assets/icons/arrow-left.png'),
     arrow_right: require('../assets/icons/arrow-right.png'),
     arrow_right_white: require('../assets/icons/arrow-right-white.png'),
     arrow_down: require('../assets/icons/arrow-down.png'),

@@ -33,5 +33,9 @@ export default function RootLayout() {
             name="mypage/index"
             options={{ headerShown: false }}
         />
+        <Stack.Screen
+            name="library/continue"
+            options={{ headerShown: false }}
+        />
     </Stack>;
 }
