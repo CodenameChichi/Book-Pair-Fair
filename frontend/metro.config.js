@@ -4,5 +4,5 @@ const { withNativeWind } = require('nativewind/metro');
 const config = getDefaultConfig(__dirname)
 
 module.exports = withNativeWind(config, { 
-    input: './app/globals.css', inlineRem: 16, configPath: './tailwind.config.js' 
+    input: './globals.css', inlineRem: 16, configPath: './tailwind.config.js' 
     })
