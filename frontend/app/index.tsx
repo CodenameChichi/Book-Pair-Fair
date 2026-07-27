@@ -1,5 +1,5 @@
 import { Link } from 'expo-router';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Pressable } from 'react-native';
 import { icons } from '../constants/icons';
 import { dummyBooks } from '../constants/dummy';
 import Carousel from '../components/carousel';
@@ -12,22 +12,23 @@ export default function Index() {
         {/* view text and icon in a row, display contents left and right */}
 
         <View>
-          {/* view text in a column */}
+          {/* title bar: view text in a column */}
           <Text className="text-[24px] text-primary font-newyork-semi">Library</Text>
           <Text className="text-[14px] text-secondary font-sf-pro pt-2">
             Every book deserves to be immersed in
           </Text>
         </View>
 
-        <Link href="/mypage" className="pt-[5px]">
-          <View className="w-[24px] h-[24px] justify-center items-center">
-            {/* view icon in a defined size square, display it in the center of the square box */}
-            <Image 
-              source={icons.my_page}
-              className="w-full h-full"
-              resizeMode="contain"
-            />
-          </View>
+        <Link href="/mypage" asChild>
+          <Pressable className="pt-[5px]">
+            <View className="w-[24px] h-[24px] justify-center items-center">
+              <Image 
+                source={icons.my_page}
+                className="w-full h-full"
+                resizeMode="contain"
+              />
+            </View>
+          </Pressable>
         </Link>
       </View>
 
@@ -37,28 +38,27 @@ export default function Index() {
         </Text>
         
         <View>
-          <Link href="/library/continue" className="pt-[5px]">
-          {/* link to the continue page */}
-            <View className="flex-row items-center">
-            {/* view text and icon in a row */}
-              <Text className="text-[12px] text-secondary font-sf-pro">
-                View all
-              </Text>
-    
-              <View className="justify-center items-center pt-[2px]">
-                <Image 
-                  source={icons.arrow_right}
-                  className="w-[10px] h-[10px]"
-                  resizeMode="contain"
-                />
+          <Link href="/library/continue" asChild>
+            <Pressable className="pt-[5px]">
+              <View className="flex-row items-center">
+                <Text className="text-[12px] text-secondary font-sf-pro">
+                  View all
+                </Text>
+                <View className="justify-center items-center pt-[2px]">
+                  <Image 
+                    source={icons.arrow_right}
+                    className="w-[10px] h-[10px]"
+                    resizeMode="contain"
+                  />
+                </View>
               </View>
-            </View>
+            </Pressable>
           </Link>
         </View>
       </View>
 
-      <View className="flex-1 justify-between items-start pt-[12px] pr-[20px] pl-[22px]">
       {/* view the list of continue sessions in a horizontal scrollable list */}
+      <View className="flex-1 justify-between items-start pt-[12px] pl-[22px]">
         <Carousel data={dummyBooks.slice(0, 3)} />
       </View>
     </View>
