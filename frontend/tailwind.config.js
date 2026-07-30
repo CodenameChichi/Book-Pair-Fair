@@ -21,11 +21,11 @@ module.exports = {
       },
 
       fontFamily: {
-        'newyork': ['NewYorkSmall-Regular'],
-        'newyork-semi': ['NewYorkSmall-Semibold'],
-        'sf-pro': ['SF-Pro-Text-Regular'],
-        'sf-pro-medium': ['SF-Pro-Text-Medium'],
-        'sf-pro-semi': ['SF-Pro-Text-Semibold'],
+        'newyork': ['newyork'],
+        'newyork-semi': ['newyork-semi'],
+        'sf-pro': ['sf-pro'],
+        'sf-pro-medium': ['sf-pro-medium'],
+        'sf-pro-semi': ['sf-pro-semi'],
       }
     },
   },
