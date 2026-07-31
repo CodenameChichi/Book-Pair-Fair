@@ -1,24 +1,17 @@
 import { useRef, useEffect } from 'react';
 import { View, Text, Pressable, Modal, Animated, Easing, Image } from 'react-native';
 import { icons } from '../constants/icons';
-
-export const SORT_OPTIONS = [
-  { key: 'recent_paired', label: 'Recently Paired' },
-  { key: 'recent_listened', label: 'Recently Listened' },
-  { key: 'title', label: 'Book Title (A-Z)' },
-  { key: 'author', label: 'Author Name (A-Z)' },
-] as const;
-
-export type SortKey = (typeof SORT_OPTIONS)[number]['key'];
+import { SortKey } from '../constants/sort';
 
 type SortMenuProps = {
   visible: boolean;
   sortKey: SortKey;
+  options: readonly { key: SortKey; label: string }[];
   onSelect: (key: SortKey) => void;
   onClose: () => void;
 };
 
-export default function SortMenu({ visible, sortKey, onSelect, onClose }: SortMenuProps) {
+export default function SortMenu({ visible, sortKey, options, onSelect, onClose }: SortMenuProps) {
   // control background fade out and slide menu seperately
 
   const backdropOpacity = useRef(new Animated.Value(0)).current;
@@ -73,7 +66,7 @@ export default function SortMenu({ visible, sortKey, onSelect, onClose }: SortMe
             Sort
           </Text>
 
-          {SORT_OPTIONS.map((option) => {
+          {options.map((option) => {
             const isSelected = sortKey === option.key;
             return (
               <Pressable

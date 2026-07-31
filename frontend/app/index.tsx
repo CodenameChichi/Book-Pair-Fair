@@ -96,6 +96,35 @@ export default function Index() {
           <Saved data={dummyBooks.slice(1, 4)} />   {/* show three books */}
         </View>        
       </View>
+
+      <View className="flex-row justify-between items-start pt-[60px] pl-[20px]">
+        <Text className="h-[24px] text-[16px] text-primary font-newyork-semi">
+          Completed Sessions
+        </Text>
+        
+        <Link href="/library/completed" asChild>
+          <Pressable className="pt-[4px] pr-[20px]">
+            <View className="flex-row justify-center items-center">
+              <Text className="text-[12px] text-secondary font-sf-pro">
+                View all
+              </Text>
+              <View className="justify-center items-center">
+                <Image
+                  source={icons.arrow_right}
+                  className="w-[10px] h-[10px]"
+                  resizeMode="contain"
+                />
+              </View>
+            </View>
+          </Pressable>
+        </Link>
+      </View>
+
+      <View>
+        <View className="pt-[12px] pl-[20px]">
+          <Saved data={dummyBooks.slice(2, 5)} />   {/* show three books */}
+        </View>        
+      </View>
       
     </ScrollView>
   );
