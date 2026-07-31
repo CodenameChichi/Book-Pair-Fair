@@ -1,0 +1,60 @@
+// index에 나타날 saved books 섹션
+
+import { Link } from 'expo-router';
+import { Text, View, Image, Pressable } from 'react-native';
+import { dummyBooks } from '../constants/dummy';
+
+const BOOK_WIDTH = 106
+const BOOK_HEIGHT = 158
+const BOOK_GAP = 16
+
+type Book = (typeof dummyBooks)[number];   // save the information of dummy.ts in variable Book
+
+function BookCover({ item }: { item : Book }) {
+
+  return (
+    <View style={{ width: BOOK_WIDTH }}>
+      <Link href={{ pathname: "/books/new", params: { id: item.id } }} asChild>
+        <Pressable>
+          <View className="relative">
+            <Image
+              source={ item.cover }
+              style={{ width: BOOK_WIDTH, height: BOOK_HEIGHT, borderRadius: 4 }}
+              resizeMode="cover"
+            />
+            <Text 
+              className='justify-start text-[12px] font-sf-pro-semi pt-[6px]'
+              numberOfLines={1}
+              ellipsizeMode='tail'
+            >
+              {item.title}
+            </Text>
+            <Text 
+              className='justify-start text-[10px] font-sf-pro'
+              numberOfLines={1}
+              ellipsizeMode='tail'
+            >
+              {item.author}
+            </Text>
+          </View>
+        </Pressable>
+      </Link>
+    </View>
+  );
+}
+
+type BookProps = {
+  data: Book[];
+};
+
+export default function Saved({ data }: BookProps) {
+  const visibleBooks = data.slice(0, 3); // show three books without scrolling
+
+  return (
+    <View style={{ flexDirection: 'row', gap: BOOK_GAP }}>
+      {visibleBooks.map((item) => (
+        <BookCover key={String(item.id)} item={item} />
+      ))}
+    </View>
+  );
+}

@@ -7,5 +7,6 @@ export const images = {
     dracula_cover: require('../assets/images/cover-dracula.png'),
     frankenstein_cover: require('../assets/images/cover-frankenstein.jpg'),
     hitchhikers_cover: require('../assets/images/cover-hitchhikers.jpg'),
+    gray_cover: require('../assets/images/cover-gray.png'),
 
 };

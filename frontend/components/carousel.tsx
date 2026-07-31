@@ -18,7 +18,7 @@ const COVER_HEIGHT = CARD_HEIGHT;
 type Book = (typeof dummyBooks)[number];   {/* save the information of dummy.ts in variable Book */}
 
 {/* normal state -> pressed state -> navigate to another page */}
-function ContinueSessionButton({ bookId }: { bookId: string }) {
+function ContinueSession({ bookId }: { bookId: string }) {
   const router = useRouter();
 
   return (
@@ -154,7 +154,7 @@ function SessionCard({ item }: { item : Book }) {
 
       <View>
         {/* Continue session button */}
-        <ContinueSessionButton bookId={String(item.id)} />
+        <ContinueSession bookId={String(item.id)} />
       </View>
     </View>
   );

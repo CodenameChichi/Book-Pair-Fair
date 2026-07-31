@@ -24,18 +24,5 @@ export default function RootLayout() {
 
     if (!fontsLoaded) return null; 
 
-    return <Stack >
-        <Stack.Screen
-            name="index"
-            options={{ headerShown: false }}
-        />
-        <Stack.Screen
-            name="mypage/index"
-            options={{ headerShown: false }}
-        />
-        <Stack.Screen
-            name="library/continue"
-            options={{ headerShown: false }}
-        />
-    </Stack>;
+    return <Stack screenOptions={{ headerShown: false }} />;
 }
