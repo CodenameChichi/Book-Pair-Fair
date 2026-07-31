@@ -75,9 +75,10 @@ export default function SortMenu({ visible, sortKey, options, onSelect, onClose 
                   onSelect(option.key);
                   handleClose();
                 }}
-                className={`flex-row justify-between items-center px-[20px] py-[16px] ${
+                className={`flex-row justify-between items-center mb-[8px] px-[20px] py-[16px] ${
                   isSelected ? 'bg-light-200' : ''
                 }`}
+                style={{ borderRadius: 8 }}
               >
                 <Text className={ `text-[15px] font-sf-pro` }>
                   {option.label}

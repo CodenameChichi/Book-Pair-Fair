@@ -59,7 +59,7 @@ export default function Saved() {
         </Pressable>
         
         <Text className="text-[20px] text-primary font-newyork-semi">
-            Completed Sessions
+            Saved Sessions
         </Text>
       </View>
 
