@@ -23,12 +23,21 @@ export default function Option({ visible, position, onClose, onDelete, onSave }:
           - onRequestClose: only works in Android (back button)
         */}
       
-      <Pressable className="flex-1" onPress={onClose}>
       {/* transparent layer makes that pop-up closed when user taps outside */}
+      <Pressable className="flex-1" onPress={onClose}>
+      {/* define style of pop-up options */}
         <View
           className="absolute bg-light-300 rounded-[4px] w-[97px] h-[52px]"
-          style={{ top: position.top, right: position.right }}
-        >   {/* define style of pop-up options */}
+          style={{ 
+            top: position.top, 
+            right: position.right, 
+            shadowColor: '#CCC4BB',
+            shadowOffset: {width: 2, height: 2},
+            shadowOpacity: 0.3,
+            shadowRadius: 4.3,
+            elevation: 4,
+          }}
+        >   
 
           {/* 
             define one of the options in pop-up (delete) 

@@ -19,6 +19,8 @@ export const icons = {
 
     note: require('../assets/icons/note.png'),
     options: require('../assets/icons/options.png'),
+    button: require('../assets/icons/button.png'),
+    button_pressed: require('../assets/icons/button-pressed.png'),
 
     heart_empty: require('../assets/icons/heart-empty.png'),
     heart_filled: require('../assets/icons/heart-filled.png'),
