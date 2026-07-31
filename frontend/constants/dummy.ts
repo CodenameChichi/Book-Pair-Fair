@@ -23,6 +23,7 @@ export const dummyBooks = [
     myReview:
       'Short but hits hard. Read it in one sitting and immediately wanted to talk about it with someone.',
     status: 'completed', // not_started / in_progress / completed
+    savedAt: '2026-05-10T08:00:00Z',        // 라이브러리에 저장(책 검색 후 선택)된 시점
     pairedAt: '2026-05-12T10:00:00Z',      // 세션(페어링) 최초 생성 시점
     lastListenedAt: '2026-06-02T21:40:00Z', // 마지막으로 들은 시점
   },
@@ -48,6 +49,7 @@ export const dummyBooks = [
     myReview:
       'Didn\'t expect the creature to be this sympathetic. The loneliness in this book is suffocating in the best way.',
     status: 'completed',
+    savedAt: '2026-04-18T07:30:00Z',
     pairedAt: '2026-04-20T09:15:00Z',
     lastListenedAt: '2026-07-15T19:05:00Z',
   },
@@ -73,6 +75,7 @@ export const dummyBooks = [
     myReview:
       'Slower than I expected, but the atmosphere is unmatched. The letter format took some getting used to.',
     status: 'in_progress',
+    savedAt: '2026-06-08T12:00:00Z',
     pairedAt: '2026-06-10T14:20:00Z',
     lastListenedAt: '2026-07-28T09:15:00Z',
   },
@@ -97,6 +100,7 @@ export const dummyBooks = [
     myRating: 0, // 아직 소감 작성 전
     myReview: '',
     status: 'not_started',
+    savedAt: '2026-07-29T15:20:00Z',
     pairedAt: null,       // 아직 세션 시작 전이라 페어링 기록 없음
     lastListenedAt: null, // 아직 들은 적 없음
   },
@@ -122,6 +126,7 @@ export const dummyBooks = [
     myReview:
       'Jane\'s refusal to compromise her values even when it costs her everything is what makes this book timeless.',
     status: 'completed',
+    savedAt: '2026-02-28T09:00:00Z',
     pairedAt: '2026-03-02T11:30:00Z',
     lastListenedAt: '2026-07-20T22:10:00Z',
   },
@@ -147,6 +152,7 @@ export const dummyBooks = [
     myReview:
       'Nobody in this book is likable, but I couldn\'t look away. The moor setting practically becomes a character itself.',
     status: 'completed',
+    savedAt: '2026-02-15T10:00:00Z',
     pairedAt: '2026-02-18T16:45:00Z',
     lastListenedAt: '2026-03-01T20:00:00Z',
   },
@@ -171,6 +177,7 @@ export const dummyBooks = [
     myRating: 0,
     myReview: '',
     status: 'in_progress',
+    savedAt: '2026-07-24T09:00:00Z',
     pairedAt: '2026-07-25T13:00:00Z',
     lastListenedAt: '2026-07-30T08:30:00Z',
   },
@@ -195,6 +202,7 @@ export const dummyBooks = [
     myRating: 0,
     myReview: '',
     status: 'not_started',
+    savedAt: '2026-07-20T14:00:00Z',
     pairedAt: null,
     lastListenedAt: null,
   },

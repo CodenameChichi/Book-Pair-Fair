@@ -5,7 +5,8 @@ import { Link, router } from 'expo-router';
 import { Text, View, Image, FlatList, Pressable } from 'react-native';
 import { dummyBooks } from '../../constants/dummy';
 import { icons } from '../../constants/icons';
-import SortMenu, { SortKey } from '../../components/sort';
+import SortMenu from '../../components/sort';
+import { SortKey, SAVED_SORT_OPTIONS } from '../../constants/sort';
 
 const BOOK_WIDTH = 106
 const BOOK_HEIGHT = 158
@@ -111,6 +112,7 @@ export default function Saved() {
       <SortMenu
         visible={sortModalVisible}
         sortKey={sortKey}
+        options={SAVED_SORT_OPTIONS}
         onSelect={setSortKey}
         onClose={() => setSortModalVisible(false)}
       />
