@@ -49,7 +49,7 @@ export default function Saved() {
 
   return (
 
-    <View className="flex-1 bg-light-100 pt-[58px] px-[20px]">
+    <View className="flex-1 bg-light-100 pt-[78px] px-[20px]">
 
       <View className="relative flex-row justify-center items-center">
         <Pressable 
@@ -65,14 +65,14 @@ export default function Saved() {
 
       <Pressable
         onPress={() => setSortModalVisible(true)}
-        className='flex-row justify-end items-center pt-[38px] pr-[4px]'
+        className='flex-row justify-end items-center pt-[23px] pr-[4px]'
       >
         <Image 
           source={icons.arrow_down}
           className="w-[10px] h-[10px]"
           resizeMode="contain"
         />
-        <Text className='text-[12px] text-secondary font-sf-pro pl-[4px]'>
+        <Text className='text-[14px] text-secondary font-sf-pro pl-[4px]'>
           Sort
         </Text>
       </Pressable>
