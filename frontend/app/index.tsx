@@ -65,7 +65,7 @@ export default function Index() {
         </View>
 
         {/* view the list of continue sessions in a horizontal scrollable list */}
-        <View className="pt-[12px] pl-[22px]">
+        <View className="pt-[12px]">
           <Carousel data={dummyBooks.slice(0, 3)} />
         </View>
 

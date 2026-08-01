@@ -14,6 +14,7 @@ const CARD_HEIGHT = 241;
 const CARD_GAP = 24;
 const COVER_WIDTH = 125; 
 const COVER_HEIGHT = CARD_HEIGHT;
+const PADDING = 22;   {/* padding for the card content */}
 
 type Book = (typeof dummyBooks)[number];   {/* save the information of dummy.ts in variable Book */}
 
@@ -175,12 +176,18 @@ export default function Carousel({ data }: CarouselProps) {
   return (
     <FlatList
       data={data}
-      renderItem={({ item }) => <SessionCard item={item} />}
-      keyExtractor={(item) => String(item.id)}
       horizontal
       showsHorizontalScrollIndicator={false}
-      snapToInterval={CARD_WIDTH + CARD_GAP}
+      keyExtractor={(item) => String(item.id)}
+      contentContainerStyle={{ 
+        paddingLeft: PADDING, 
+        paddingRight: PADDING,
+      }}
+      snapToOffsets={data.map((_, i) => i * (CARD_WIDTH + CARD_GAP))}
       decelerationRate="fast"
+      renderItem={({ item }) => (
+        <SessionCard item={item} />
+      )}
     />
   );
 }
