@@ -9,7 +9,7 @@ import SortMenu from '../../components/sort';
 import { SortKey, SESSION_SORT_OPTIONS } from '../../constants/sort';
 
 const BOOK_WIDTH = 106
-const BOOK_HEIGHT = 158
+const BOOK_HEIGHT = 159
 const BOOK_GAP = 16
 
 export default function Continued() {

@@ -10,7 +10,7 @@ import Option from './option';
 
 {/* define constants for card dimensions and gap */}
 const CARD_WIDTH = 304;
-const CARD_HEIGHT = 241;
+const CARD_HEIGHT = 243;
 const CARD_GAP = 24;
 const COVER_WIDTH = 125; 
 const COVER_HEIGHT = CARD_HEIGHT;

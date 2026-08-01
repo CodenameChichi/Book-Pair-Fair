@@ -39,25 +39,23 @@ export default function Index() {
           </View>
         </View>
 
-        <View className="flex-row justify-between items-start pt-[31px] pr-[20px] pl-[20px]">
+        <View className="flex-row justify-between items-start pt-[33px] pr-[20px] pl-[20px]">
           <Text className="w-[188px] h-[24px] text-[16px] text-primary font-newyork-semi">
             Continue your session
           </Text>
-        
-          <View>
+          
+          <View className="pb-[3px]">
             <Link href="/library/continue" asChild>
-              <Pressable className="pt-[5px]">
+              <Pressable>
                 <View className="flex-row justify-center items-center">
-                  <Text className="text-[12px] text-secondary font-sf-pro">
+                  <Text className="text-[14px] text-secondary font-sf-pro">
                     View all
                   </Text>
-                  <View className="justify-center items-center">
                     <Image 
                       source={icons.arrow_right}
-                      className="w-[10px] h-[10px]"
+                      className="w-[10px] h-[10px] pl-[2px]"
                       resizeMode="contain"
                     />
-                  </View>
                 </View>
               </Pressable>
             </Link>
@@ -65,64 +63,64 @@ export default function Index() {
         </View>
 
         {/* view the list of continue sessions in a horizontal scrollable list */}
-        <View className="pt-[12px]">
+        <View className="pt-[10px]">
           <Carousel data={dummyBooks.slice(0, 3)} />
         </View>
 
-        <View className="flex-row justify-between items-start pt-[60px] pl-[20px]">
+        <View className="flex-row justify-between items-start pt-[63px] pl-[20px] pr-[20px]">
           <Text className="h-[24px] text-[16px] text-primary font-newyork-semi">
             Saved Books
           </Text>
-        
-          <Link href="/library/saved" asChild>
-            <Pressable className="pt-[4px] pr-[20px]">
-              <View className="flex-row justify-center items-center">
-                <Text className="text-[12px] text-secondary font-sf-pro">
-                  View all
-                </Text>
-                <View className="justify-center items-center">
-                  <Image
-                    source={icons.arrow_right}
-                    className="w-[10px] h-[10px]"
-                    resizeMode="contain"
-                  />
+          
+          <View className="pb-[3px]">
+            <Link href="/library/saved" asChild>
+              <Pressable>
+                <View className="flex-row justify-center items-center">
+                  <Text className="text-[14px] text-secondary font-sf-pro">
+                    View all
+                  </Text>
+                    <Image 
+                      source={icons.arrow_right}
+                      className="w-[10px] h-[10px] pl-[2px]"
+                      resizeMode="contain"
+                    />
                 </View>
-              </View>
-            </Pressable>
-          </Link>
+              </Pressable>
+            </Link>
+          </View>
         </View>
 
         <View>
-          <View className="pt-[12px] pl-[20px]">
+          <View className="pt-[10px] pl-[20px]">
             <Saved data={dummyBooks.slice(1, 4)} />   {/* show three books */}
           </View>        
         </View>
 
-        <View className="flex-row justify-between items-start pt-[60px] pl-[20px]">
+        <View className="flex-row justify-between items-start pt-[54px] pl-[20px] pr-[20px]">
           <Text className="h-[24px] text-[16px] text-primary font-newyork-semi">
             Completed Sessions
           </Text>
-        
-          <Link href="/library/completed" asChild>
-            <Pressable className="pt-[4px] pr-[20px]">
-              <View className="flex-row justify-center items-center">
-                <Text className="text-[12px] text-secondary font-sf-pro">
-                  View all
-                </Text>
-                <View className="justify-center items-center">
-                  <Image
-                    source={icons.arrow_right}
-                    className="w-[10px] h-[10px]"
-                    resizeMode="contain"
-                  />
+          
+          <View className="pb-[3px]">
+            <Link href="/library/completed" asChild>
+              <Pressable>
+                <View className="flex-row justify-center items-center">
+                  <Text className="text-[14px] text-secondary font-sf-pro">
+                    View all
+                  </Text>
+                    <Image 
+                      source={icons.arrow_right}
+                      className="w-[10px] h-[10px] pl-[2px]"
+                      resizeMode="contain"
+                    />
                 </View>
-              </View>
-            </Pressable>
-          </Link>
+              </Pressable>
+            </Link>
+          </View>
         </View>
 
         <View>
-          <View className="pt-[12px] pl-[20px]">
+          <View className="pt-[9px] pl-[20px]">
             <Saved data={dummyBooks.slice(2, 5)} />   {/* show three books */}
           </View>        
         </View>
