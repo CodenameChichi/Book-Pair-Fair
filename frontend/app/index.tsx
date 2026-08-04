@@ -13,6 +13,9 @@ export default function Index() {
   const scrollY = useRef(new Animated.Value(0)).current;
   const [headerHeight, setHeaderHeight] = useState(66 + 34 + 22);
 
+  const EXTRA_COVERAGE = 80;
+  const blurHeight = headerHeight + EXTRA_COVERAGE;
+
   const onHeaderLayout = useCallback((e: LayoutChangeEvent) => {
     setHeaderHeight(e.nativeEvent.layout.height);
   }, []);
@@ -116,13 +119,12 @@ export default function Index() {
         </View>
       </Animated.ScrollView>
 
-      <BlurStatusBar scrollY={scrollY} offsetTop={headerHeight} />
+      <BlurStatusBar scrollY={scrollY} headerHeight={blurHeight} />
 
       {/* screen size, background color */}
       <View
         onLayout={onHeaderLayout}
         className="absolute top-0 left-0 right-0 z-20 pt-[66px] pl-[20px] pr-[24px]"
-        style={{ backgroundColor: BG_COLOR }}
       >
         {/* view text and icon in a row, display contents left and right */}
 

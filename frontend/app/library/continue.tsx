@@ -18,8 +18,6 @@ const BOOK_HEIGHT = 158
 const BOOK_GAP = (SCREEN_WIDTH - CONTAINER_PADDING - BOOK_WIDTH * 3) / 2
 const LINE_GAP = 16
 
-const BG_COLOR = '#F8F6F3';
-
 export default function Continued() {
 
 //   const { id } = useLocalSearchParams<{ id: string }>();
@@ -31,6 +29,9 @@ export default function Continued() {
   const [headerHeight, setHeaderHeight] = useState(78);
   const [sortModalVisible, setSortModalVisible] = useState(false);
   const [sortKey, setSortKey] = useState<SortKey>('recent_paired');
+
+  const EXTRA_COVERAGE = 80;
+  const blurHeight = headerHeight + EXTRA_COVERAGE;
 
   const onHeaderLayout = useCallback((e: LayoutChangeEvent) => {
     setHeaderHeight(e.nativeEvent.layout.height);
@@ -121,12 +122,11 @@ export default function Continued() {
         />
       </Animated.ScrollView>
 
-      <BlurStatusBar scrollY={scrollY} offsetTop={headerHeight} />
+      <BlurStatusBar scrollY={scrollY} headerHeight={blurHeight} tintOpacity={0.8} />
 
       <View
         onLayout={onHeaderLayout}
         className="absolute top-0 left-0 right-0 z-20 pt-[78px] px-[20px]"
-        style={{ backgroundColor: BG_COLOR }}
       >
         <View className="relative flex-row justify-center items-center">
           <Pressable 
@@ -136,7 +136,7 @@ export default function Continued() {
           </Pressable>
           
           <Text className="text-[20px] text-primary font-newyork-semi">
-              Continue your sessions
+              Continue your session
           </Text>
         </View>
       </View>

@@ -124,13 +124,12 @@ export default function Completed() {
       </Animated.ScrollView>
 
       {/* 스크롤 시 헤더 바로 아래에서 서서히 사라지는 블러 오버레이 */}
-      <BlurStatusBar scrollY={scrollY} offsetTop={headerHeight} />
+      <BlurStatusBar scrollY={scrollY} headerHeight={headerHeight} />
 
       {/* 상단 고정 헤더 (뒤로가기 + 타이틀), 항상 solid 배경 */}
       <View
         onLayout={onHeaderLayout}
         className="absolute top-0 left-0 right-0 z-20 pt-[78px] px-[20px]"
-        style={{ backgroundColor: BG_COLOR }}
       >
         <View className="relative flex-row justify-center items-center pb-[16px]">
           <Pressable 
