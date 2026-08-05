@@ -2,10 +2,10 @@ import {
   View, Text, Image, ImageBackground, FlatList, Dimensions, TouchableOpacity, Pressable,
 } from 'react-native';
 import { useState, useRef } from 'react';
-import { useRouter } from 'expo-router';
-import { dummyBooks } from '../constants/dummy';
-import { icons } from '../constants/icons';
-import { images } from '../constants/images';
+import { Link, useRouter } from 'expo-router';
+import { dummyBooks } from '../../constants/dummy';
+import { icons } from '../../constants/icons';
+import { images } from '../../constants/images';
 import Option from './option';
 
 {/* define constants for card dimensions and gap */}
@@ -23,7 +23,8 @@ function ContinueSession({ bookId }: { bookId: string }) {
   const router = useRouter();
 
   return (
-    <Pressable onPress={() => router.push(`/books/${bookId}`)}>
+    <Link href={{ pathname: "/books/[id]", params: { id: bookId } }} asChild>
+    <Pressable>
       {({ pressed }) => (
         <ImageBackground
           source={pressed ? icons.button_pressed : icons.button}
@@ -52,6 +53,7 @@ function ContinueSession({ bookId }: { bookId: string }) {
         </ImageBackground>
       )}
     </Pressable>
+    </Link>
   );
 }
 

@@ -3,7 +3,7 @@ import { Link } from 'expo-router';
 import { Text, View, Image, Pressable, Animated, LayoutChangeEvent } from 'react-native';
 import { icons } from '../constants/icons';
 import { dummyBooks } from '../constants/dummy';
-import Carousel from '../components/carousel';
+import Carousel from '../components/sessions/carousel';
 import Saved from '../components/saved';
 import BlurStatusBar from '../components/blur';
 
