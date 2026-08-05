@@ -2,7 +2,6 @@ import { router } from 'expo-router';
 import { useState } from 'react';
 import { Text, View, Image, Pressable, TextInput } from 'react-native';
 import { icons } from '../constants/icons';
-import Pill from "react-pill";
 
 export default function Search() {
 
