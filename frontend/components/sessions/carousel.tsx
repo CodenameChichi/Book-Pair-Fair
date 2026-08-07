@@ -2,18 +2,19 @@ import {
   View, Text, Image, ImageBackground, FlatList, Dimensions, TouchableOpacity, Pressable,
 } from 'react-native';
 import { useState, useRef } from 'react';
-import { useRouter } from 'expo-router';
-import { dummyBooks } from '../constants/dummy';
-import { icons } from '../constants/icons';
-import { images } from '../constants/images';
+import { Link, useRouter } from 'expo-router';
+import { dummyBooks } from '../../constants/dummy';
+import { icons } from '../../constants/icons';
+import { images } from '../../constants/images';
 import Option from './option';
 
 {/* define constants for card dimensions and gap */}
 const CARD_WIDTH = 304;
-const CARD_HEIGHT = 241;
+const CARD_HEIGHT = 243;
 const CARD_GAP = 24;
 const COVER_WIDTH = 125; 
 const COVER_HEIGHT = CARD_HEIGHT;
+const PADDING = 22;   {/* padding for the card content */}
 
 type Book = (typeof dummyBooks)[number];   {/* save the information of dummy.ts in variable Book */}
 
@@ -22,7 +23,8 @@ function ContinueSession({ bookId }: { bookId: string }) {
   const router = useRouter();
 
   return (
-    <Pressable onPress={() => router.push(`/books/${bookId}`)}>
+    <Link href={{ pathname: "/books/[id]", params: { id: bookId } }} asChild>
+    <Pressable>
       {({ pressed }) => (
         <ImageBackground
           source={pressed ? icons.button_pressed : icons.button}
@@ -51,6 +53,7 @@ function ContinueSession({ bookId }: { bookId: string }) {
         </ImageBackground>
       )}
     </Pressable>
+    </Link>
   );
 }
 
@@ -175,12 +178,18 @@ export default function Carousel({ data }: CarouselProps) {
   return (
     <FlatList
       data={data}
-      renderItem={({ item }) => <SessionCard item={item} />}
-      keyExtractor={(item) => String(item.id)}
       horizontal
       showsHorizontalScrollIndicator={false}
-      snapToInterval={CARD_WIDTH + CARD_GAP}
+      keyExtractor={(item) => String(item.id)}
+      contentContainerStyle={{ 
+        paddingLeft: PADDING, 
+        paddingRight: PADDING,
+      }}
+      snapToOffsets={data.map((_, i) => i * (CARD_WIDTH + CARD_GAP))}
       decelerationRate="fast"
+      renderItem={({ item }) => (
+        <SessionCard item={item} />
+      )}
     />
   );
 }

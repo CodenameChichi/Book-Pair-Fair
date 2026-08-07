@@ -27,4 +27,7 @@ export const icons = {
     star_empty: require('../assets/icons/star-empty.png'),
     star_filled: require('../assets/icons/star-filled.png'),
 
+    search: require('../assets/icons/search.png'),
+    close: require('../assets/icons/x.png'),
+
 }

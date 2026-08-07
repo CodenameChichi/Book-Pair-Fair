@@ -5,7 +5,7 @@ import { Text, View, Image, Pressable } from 'react-native';
 import { dummyBooks } from '../constants/dummy';
 
 const BOOK_WIDTH = 106
-const BOOK_HEIGHT = 158
+const BOOK_HEIGHT = 159
 const BOOK_GAP = 16
 
 type Book = (typeof dummyBooks)[number];   // save the information of dummy.ts in variable Book
@@ -23,14 +23,14 @@ function BookCover({ item }: { item : Book }) {
               resizeMode="cover"
             />
             <Text 
-              className='justify-start text-[12px] font-sf-pro-semi pt-[6px]'
+              className='justify-start text-[12px] font-sf-pro-semi pt-[8px]'
               numberOfLines={1}
               ellipsizeMode='tail'
             >
               {item.title}
             </Text>
             <Text 
-              className='justify-start text-[10px] font-sf-pro'
+              className='justify-start text-[10px] text-secondary font-sf-pro pt-[4px]'
               numberOfLines={1}
               ellipsizeMode='tail'
             >
